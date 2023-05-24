@@ -24,8 +24,10 @@ DELIMITER //
 
 
 
--- Procedimiento almacenado que toma como entrada la categoría de productos (gama) y devuelve los valores mínimos, máximos y promedio de precios para esa categoría de productos en la tabla "producto" de la base de datos de jardinería:
-CREATE PROCEDURE obtener_estadisticas_producto(IN gama_producto VARCHAR(50), OUT min_precio DECIMAL(15, 2), OUT max_precio DECIMAL(15, 2), OUT avg_precio DECIMAL(15, 2))
+-- Procedimiento almacenado que toma como entrada la categoría de productos (gama) y devuelve los valores mínimos, 
+-- máximos y promedio de precios para esa categoría de productos en la tabla "producto" de la base de datos de jardinería:
+CREATE PROCEDURE obtener_estadisticas_producto(IN gama_producto VARCHAR(50), 
+OUT min_precio DECIMAL(15, 2), OUT max_precio DECIMAL(15, 2), OUT avg_precio DECIMAL(15, 2))
 BEGIN
     SELECT MIN(precio_venta) INTO min_precio
     FROM producto
