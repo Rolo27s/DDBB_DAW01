@@ -42,7 +42,8 @@ CREATE TABLE alumnos (
 
 -- Crear el procedimiento crear_email
 DELIMITER //
-CREATE PROCEDURE crear_email(IN v_nombre VARCHAR(50),IN v_apellido1 VARCHAR(50),IN v_apellido2 VARCHAR(50),IN v_dominio VARCHAR(50),OUT v_email VARCHAR(100)
+CREATE PROCEDURE crear_email(IN v_nombre VARCHAR(50),IN v_apellido1 VARCHAR(50),
+IN v_apellido2 VARCHAR(50),IN v_dominio VARCHAR(50),OUT v_email VARCHAR(100)
 )
 BEGIN
   SET v_email = CONCAT(LEFT(v_nombre, 1),LEFT(v_apellido1, 3),LEFT(v_apellido2, 3),'@',    v_dominio);
