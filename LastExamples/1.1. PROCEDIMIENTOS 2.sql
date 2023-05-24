@@ -34,7 +34,8 @@ DELIMITER //
 DROP PROCEDURE IF EXISTS pagos //
 CREATE PROCEDURE pagos(IN tipopago varchar(50))
 	BEGIN
-		SELECT max(total) maximo_pago,min(total) minimo_pago,avg(total) media_pago,sum(total) suma_pago,count(total) num_de_pagos  FROM pago WHERE forma_pago = tipopago;
+		SELECT max(total) maximo_pago,min(total) minimo_pago,avg(total) media_pago,
+		sum(total) suma_pago,count(total) num_de_pagos  FROM pago WHERE forma_pago = tipopago;
         
 	END //
 DELIMITER ;
